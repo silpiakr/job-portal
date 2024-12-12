@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import jobIcon from '../../assets/icons/mini-logo.png'
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -17,8 +18,8 @@ const Navbar = () => {
 
 
     const links = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 1</a></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/allJobs'>All jobs</NavLink></li>
     </>
     return (
         <div>
@@ -46,7 +47,8 @@ const Navbar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <img src={jobIcon} className='w-12' alt="" />
+                    <a className="btn btn-ghost text-3xl">Job Portal</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
